@@ -1,0 +1,8 @@
+.currency-select {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+.currency-select__input {
+  margin-bottom: 10px;
+}

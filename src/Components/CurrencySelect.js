@@ -11,8 +11,12 @@ function CurrencySelect({ handleDisplay }) {
 
   useEffect(() => {
     async function getCurrencyListForSelectInput() {
-      let fetchedCurrencyList = await getAvailableCurrencyList();
-      setCurrencyList([...fetchedCurrencyList]);
+      try {
+        let fetchedCurrencyList = await getAvailableCurrencyList();
+        setCurrencyList([...fetchedCurrencyList]);
+      } catch (error) {
+        console.log(error.code)
+      }
     }
     getCurrencyListForSelectInput();
   }, []);
